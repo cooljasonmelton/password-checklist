@@ -47,7 +47,7 @@ const SetPasswordForm = () => {
     else setContainsSC(false)
 
     // has 8 characters
-    if (passwordOne.split('').length > 8) setContains8C(true)
+    if (passwordOne.length >= 8) setContains8C(true)
     else setContains8C(false)
 
     // passwords match
@@ -57,8 +57,6 @@ const SetPasswordForm = () => {
     // all validations passed
     if (containsUL && containsLL && containsN && containsSC && contains8C && passwordMatch) setAllValid(true)
     else setAllValid(false)
-
-
   }
 
   return (
