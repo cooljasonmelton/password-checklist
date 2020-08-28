@@ -4,24 +4,22 @@ import React from 'react';
 import './SetPasswordForm.css';
 
 const MustContainItem = props => {
-    const {label} = props
+    const { data } = props
+    const label = data[0]
+    const meetsReq = data[1]
 
     const setClass = () => {
         const classArr = ["must-line"]
-        if (label[1]) classArr.push('cross-out')
+        if (meetsReq) classArr.push('cross-out')
         return classArr.join(' ')
-      }
-
+    }
 
     return (
         <div className="MustContainItem">
-
             <div className="must-item">
-                <p className="must-text">{label[0]}</p>
+                <p className="must-text">{label}</p>
                 <div className={setClass()}></div>
             </div>
-
-
         </div>
   );
 }

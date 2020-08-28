@@ -10,17 +10,18 @@ const SetPasswordForm = () => {
   const [passwordTwo, setPasswordTwo] = useState("")
 
   // booleans for password validations
-  const [containsUL, setContainsUL] = useState(false)
-  const [containsLL, setContainsLL] = useState(false)
-  const [containsN, setContainsN] = useState(false)
-  const [containsSC, setContainsSC] = useState(false)
-  const [contains8C, setContains8C] = useState(false)
-  const [passwordMatch, setPasswordMatch] = useState(false)
+  const [containsUL, setContainsUL] = useState(false) // uppercase letter
+  const [containsLL, setContainsLL] = useState(false) // lowercase letter
+  const [containsN, setContainsN] = useState(false) // number
+  const [containsSC, setContainsSC] = useState(false) // special character
+  const [contains8C, setContains8C] = useState(false) // min 8 characters
+  const [passwordMatch, setPasswordMatch] = useState(false) // passwords match
+
+  // checks all validations are true
   const [allValid, setAllValid] = useState(false)
 
-
-
-  const mustContainLabels = [
+  // labels and state boolean corresponding to each validation
+  const mustContainData = [
     ["An uppercase letter (a-z)", containsUL],
     ["A lowercase letter (A-Z)", containsLL],
     ["A number (0-9)", containsN],
@@ -62,15 +63,42 @@ const SetPasswordForm = () => {
   return (
     <div className="SetPasswordForm cfb">
         <h1> Update Password: </h1>
-        <h3>Must contain:</h3>
+      
+      {/* update password form */}
+        <form className="password-form cfb">
+          {/* password one */}
+            <label> 
+              new password: 
+              <br/>
+             <input type="password" 
+              value={passwordOne} 
+              onChange={e=>setPasswordOne(e.target.value)} 
+              onKeyUp={validatePassword}/>
+            </label>
 
-        {mustContainLabels.map(label=> <MustContainItem label={label}/>)}
+          {/* password two */}
+            <label>
+              re-enter password: 
+              <br/>
+              <input type="password" 
+                value={passwordTwo} 
+                onChange={e=>setPasswordTwo(e.target.value)} 
+                onKeyUp={validatePassword} />
+            </label>
 
-        <form className="password-form">
-            <input type="password" value={passwordOne} onChange={e=>setPasswordOne(e.target.value)} onKeyUp={validatePassword}/>
-            <input type="password" value={passwordTwo} onChange={e=>setPasswordTwo(e.target.value)} onKeyUp={validatePassword} />
-            <input type="submit" disabled={!allValid}/>
+          {/* input button */}
+            <input 
+              className="submit-button"
+              type="submit" 
+              disabled={!allValid}/>
         </form>
+
+        {/* create an MustContainItem for each password validation with props of label and boolean of state */}
+        <h3>Must contain:</h3>
+        <div className="must-container cfb">
+          {mustContainData.map(data=> <MustContainItem data={data}/>)}
+        </div>
+
     </div>
   );
 }
