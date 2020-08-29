@@ -10,8 +10,6 @@ const App = () => {
   return (
     <div className="App cfb">
       <UpdatePasswordContainer/>
-
-
     </div>
   );
 }
