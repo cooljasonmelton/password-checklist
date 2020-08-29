@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 //styling
-import './SetPasswordForm.css';
+import './UpdatePasswordContainer.css';
 import MustContainItem from './MustContainItem';
 
-const SetPasswordForm = () => {
+const UpdatePasswordContainer = () => {
   // form inputs
   const [passwordOne, setPasswordOne] = useState("")
   const [passwordTwo, setPasswordTwo] = useState("")
@@ -61,8 +61,8 @@ const SetPasswordForm = () => {
   }
 
   return (
-    <div className="SetPasswordForm cfb">
-        <h1> Update Password: </h1>
+    <div className="UpdatePasswordContainer cfb">
+        <h1> Update Password</h1>
       
       {/* update password form */}
         <form className="password-form cfb">
@@ -103,4 +103,4 @@ const SetPasswordForm = () => {
   );
 }
 
-export default SetPasswordForm;
+export default UpdatePasswordContainer;

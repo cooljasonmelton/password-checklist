@@ -4,12 +4,12 @@ import React from 'react';
 import './App.css';
 
 //components
-import SetPasswordForm from './components/SetPasswordForm';
+import UpdatePasswordContainer from './components/UpdatePasswordContainer';
 
 const App = () => {
   return (
     <div className="App cfb">
-      <SetPasswordForm/>
+      <UpdatePasswordContainer/>
 
 
     </div>

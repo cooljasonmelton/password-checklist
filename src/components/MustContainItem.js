@@ -1,7 +1,7 @@
 import React from 'react';
 
 //styling
-import './SetPasswordForm.css';
+import './UpdatePasswordContainer.css';
 
 const MustContainItem = props => {
     const { data } = props
@@ -17,7 +17,7 @@ const MustContainItem = props => {
     return (
         <div className="MustContainItem">
             <div className="must-item">
-                <p className="must-text">{label}</p>
+                <li className="must-text">{label}</li>
                 <div className={setClass()}></div>
             </div>
         </div>
