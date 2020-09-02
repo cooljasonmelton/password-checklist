@@ -6,12 +6,8 @@ import './App.css';
 //components
 import UpdatePasswordContainer from './components/UpdatePasswordContainer';
 
-const App = () => {
-  return (
+export default () => (
     <div className="App cfb">
       <UpdatePasswordContainer/>
     </div>
-  );
-}
-
-export default App;
+)
