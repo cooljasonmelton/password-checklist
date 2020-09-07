@@ -4,3 +4,6 @@
 
 * by Jason Melton 
 * jason.melton2@gmail.com
+
+* visitors
+![Visitor Count](https://profile-counter.glitch.me/cooljasonmelton/count.svg)
