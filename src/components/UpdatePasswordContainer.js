@@ -44,7 +44,7 @@ const UpdatePasswordContainer = () => {
     else setContainsN(false)
 
     // has special character
-    if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(passwordOne)) setContainsSC(true)
+    if (/[~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(passwordOne)) setContainsSC(true)
     else setContainsSC(false)
 
     // has 8 characters
